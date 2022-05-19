@@ -7,9 +7,6 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ContactsComponent implements OnInit {
 
-  @Input()
-  isContactPageVisible!: boolean;
-
   constructor() { }
 
   ngOnInit(): void {

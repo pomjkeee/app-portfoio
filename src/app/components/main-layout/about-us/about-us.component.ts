@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { DogService } from 'src/app/shared/service/dog.service';
 
 @Component({
   selector: 'app-about-us',
@@ -7,12 +8,22 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class AboutUsComponent implements OnInit {
 
-  @Input()
-  isAboutUsPageVisible!: boolean;
+  randomImageUrl: string = "";
 
-  constructor() { }
+  constructor(private dogService: DogService) { }
 
   ngOnInit(): void {
+    this.dogService.getRandomImage().subscribe((data: any) => {
+      console.log(data);
+      this.randomImageUrl = data.message;
+    })
+  }
+
+  getImage() {
+    this.dogService.getRandomImage().subscribe((data: any) => {
+      console.log(data);
+      this.randomImageUrl = data.message;
+    })
   }
 
 }

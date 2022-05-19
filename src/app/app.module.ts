@@ -10,6 +10,8 @@ import { AboutUsComponent } from './components/main-layout/about-us/about-us.com
 import { ContactsComponent } from './components/main-layout/contacts/contacts.component';
 import { CommonModule } from '@angular/common';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +23,7 @@ import { CommonModule } from '@angular/common';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     CommonModule
   ],

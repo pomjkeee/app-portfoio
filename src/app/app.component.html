@@ -7,7 +7,6 @@
                   (onContactPageSelect)="showContactPage()"
   ></app-app-header>
 </div>
-
 <!-- <div class="header">
   <div class="main-menu">
     <div [class.active]="isMainPageVisible" (click)="showMainPage()">Главная</div>
@@ -17,9 +16,9 @@
 </div> -->
 
 <div class="main-layout">
-  <app-main [isMainPageVisible]="isMainPageVisible"></app-main>
-  <app-about-us [isAboutUsPageVisible]="isAboutUsPageVisible"></app-about-us>
-  <app-contacts [isContactPageVisible]="isContactPageVisible"></app-contacts>
+  <app-main *ngIf="isMainPageVisible"></app-main>
+  <app-about-us *ngIf="isAboutUsPageVisible"></app-about-us>
+  <app-contacts *ngIf="isContactPageVisible"></app-contacts>
 </div>
 
 <div class="footer">
